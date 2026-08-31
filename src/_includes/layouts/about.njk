@@ -1,0 +1,90 @@
+---
+layout: layouts/base.njk
+---
+
+<div class="about-banner">
+  <div class="site-container">
+    <h1 class="about-banner-title">{{ title }}</h1>
+    {% if lead %}
+      {% if ageLead %}
+        {% set _ageWord = site.author.birthdate | ageWord %}
+        {% set _leadDisplay = (_ageWord | capitalize + ". " if _ageWord else "") + lead %}
+      {% else %}
+        {% set _leadDisplay = lead %}
+      {% endif %}
+      <p class="about-banner-lead">{{ _leadDisplay }}</p>
+    {% endif %}
+  </div>
+</div>
+
+<div class="site-container">
+  <div class="about-body about-body--spaced">
+    {{ content | safe }}
+  </div>
+</div>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "{{ site.url }}/#author",
+      "name": "NA Thompson",
+      "legalName": "Nicholas A. Thompson",
+      "url": "{{ site.url }}/about/",
+      "jobTitle": "Political Writer",
+      "description": "Nicholas A. Thompson is a Cognitive Sciences student at the University of California, Irvine and libertarian political writer applying structural economic analysis to electoral systems, intellectual property law, cognitive capture, and urban planning. In 2026, he ran for Governor of California under the Libertarian Party.",
+      "affiliation": {
+        "@type": "EducationalOrganization",
+        "name": "University of California, Irvine",
+        "department": "Cognitive Sciences"
+      },
+      "memberOf": {
+        "@type": "Organization",
+        "name": "Libertarian Party of California"
+      },
+      "homeLocation": {
+        "@type": "Place",
+        "name": "Irvine, CA"
+      },
+      "sameAs": [
+        "https://x.com/nickispolitical",
+        "https://ballotpedia.org/Nicholas_Thompson_(California)"
+      ],
+      "knowsAbout": [
+        "Electoral systems and ballot access law",
+        "Gerrymandering and redistricting",
+        "Intellectual property as state monopoly",
+        "Patent law and copyright as rent extraction",
+        "Regulatory capture",
+        "Cognitive capture",
+        "Urban planning and car dependency",
+        "Technology sovereignty and open-source",
+        "Cartel party theory of democratic dysfunction",
+        "Libertarian political theory",
+        "Cognitive science"
+      ],
+      "hasOccupation": {
+        "@type": "Occupation",
+        "name": "Political Writer",
+        "occupationLocation": {
+          "@type": "City",
+          "name": "Irvine, CA"
+        },
+        "skills": "Structural analysis of monopoly, state capture, and cognitive manipulation in political and economic systems"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "{{ site.url }}{{ page.url }}#webpage",
+      "url": "{{ site.url }}{{ page.url }}",
+      "name": "{{ title }} | {{ site.name }}",
+      "description": "{{ description }}",
+      "isPartOf": { "@id": "{{ site.url }}/#website" },
+      "about": { "@id": "{{ site.url }}/#author" },
+      "inLanguage": "en-US"
+    }
+  ]
+}
+</script>

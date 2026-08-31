@@ -1,0 +1,50 @@
+---
+layout: layouts/base.njk
+---
+<div class="site-container">
+
+  <section class="home-lede">
+    <div class="home-lede-pitch">
+      <p>The problems you are living through have names. Not the names commonly given to them: not "market failure," not "corporate greed," not "regulatory capture." Those describe symptoms. This site traces mechanisms.</p>
+      <p>The mechanism, in most cases, is the same. A state authority issues an exclusive grant: a patent, a zoning restriction, a franchise monopoly, a ballot access law. The grantee stops competing. The product degrades. The public pays and has nowhere else to go.</p>
+      <p>That is not capitalism failing. That is state-granted monopoly succeeding.</p>
+    </div>
+    <div class="home-lede-links">
+      <a href="/method/">The method &rarr;</a>
+      <a href="#domains">Writing &darr;</a>
+    </div>
+  </section>
+
+  <section class="home-domains" id="domains" aria-labelledby="domains-label">
+    <span class="section-label" id="domains-label">Writing</span>
+
+    {% for domain in domains %}
+    {% set domainPosts = collections["domain_" + domain.key | replace("-", "_")] %}
+    {% set postCount = domainPosts | length %}
+    <div class="domain-row">
+      <div class="domain-row-info">
+        <h2 class="domain-row-title">
+          <a href="/{{ domain.key }}/">{{ domain.title }}</a>
+        </h2>
+        <p class="domain-row-desc">{{ domain.description }}</p>
+      </div>
+      <div class="domain-row-count" aria-label="{{ postCount }} {% if postCount == 1 %}piece{% else %}pieces{% endif %}">
+        {{ postCount }} {% if postCount == 1 %}piece{% else %}pieces{% endif %}
+      </div>
+      {% if domainPosts | length > 0 %}
+      <div class="domain-row-posts-preview">
+        <ul class="post-preview-list" aria-label="Recent {{ domain.title }} pieces">
+          {% for post in domainPosts | limit(3) %}
+          <li class="post-preview-item">
+            <a href="{{ post.url }}">{{ post.data.title }}</a>
+            <span class="post-preview-date">{{ post.date | dateReadable }}</span>
+          </li>
+          {% endfor %}
+        </ul>
+      </div>
+      {% endif %}
+    </div>
+    {% endfor %}
+  </section>
+
+</div>

@@ -1,0 +1,78 @@
+name: Build and Test
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+# Required for GitHub Pages deploy
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    name: Build site and run checks
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build site
+        run: npm run build
+
+      - name: Run privacy and style checks
+        run: node tests/check-external-urls.mjs
+
+      - name: Verify raw .md endpoints exist
+        run: |
+          echo "Checking for raw .md endpoints..."
+          COUNT=0
+          for mdfile in src/content/posts/*.md; do
+            slug=$(basename "$mdfile" .md)
+            if [ -f "_site/${slug}.md" ]; then
+              echo "  OK  ${slug}.md"
+              COUNT=$((COUNT + 1))
+            else
+              echo "  FAIL  ${slug}.md not found in _site/"
+              exit 1
+            fi
+          done
+          echo "Found $COUNT raw .md endpoints."
+
+      - name: Verify feed files exist
+        run: |
+          test -f _site/feeds/rss.xml  && echo "  OK  rss.xml"  || (echo "FAIL: rss.xml missing"  && exit 1)
+          test -f _site/feeds/atom.xml && echo "  OK  atom.xml" || (echo "FAIL: atom.xml missing" && exit 1)
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        if: github.ref == 'refs/heads/main'
+        with:
+          path: _site/
+
+  deploy-pages:
+    name: Deploy to GitHub Pages
+    runs-on: ubuntu-latest
+    needs: build
+    if: github.ref == 'refs/heads/main'
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

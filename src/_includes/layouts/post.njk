@@ -1,0 +1,146 @@
+---
+layout: layouts/base.njk
+ogType: article
+---
+<article itemscope itemtype="https://schema.org/Article">
+
+  <header class="post-header">
+    <div class="site-container">
+      {% if domain %}
+      <a class="post-domain-link" href="/{{ domain }}/" rel="category">{{ domain | domainLabel }}</a>
+      {% endif %}
+
+      <h1 class="post-title" itemprop="headline">{{ title }}</h1>
+
+      <div class="post-meta" role="list">
+        <span class="post-meta-item" itemprop="datePublished" content="{{ date | dateISO }}" role="listitem">
+          {{ date | dateReadable }}
+        </span>
+        <span class="post-meta-sep" aria-hidden="true">/</span>
+        <span class="post-meta-item" role="listitem">{{ content | readingTime }}</span>
+        <span class="post-meta-sep" aria-hidden="true">/</span>
+        <span class="post-meta-item" itemprop="author" itemscope itemtype="https://schema.org/Person" role="listitem">
+          <span itemprop="name">{{ site.author.name }}</span>
+        </span>
+      </div>
+    </div>
+  </header>
+
+  <div class="site-container">
+    <div class="post-body" itemprop="articleBody">
+      {{ content | safe }}
+    </div>
+
+    <footer class="post-footer">
+      {% if domain %}
+      <a href="/{{ domain }}/" class="breadcrumb">&larr; {{ domain | domainLabel }}</a>
+      {% endif %}
+      <div class="post-share">
+        {% set shareUrl = site.url + page.url %}
+        <a class="share-link" href="https://x.com/intent/tweet?text={{ title | urlencode }}&url={{ shareUrl | urlencode }}" rel="noopener noreferrer" target="_blank" aria-label="Share on X">X / Twitter</a>
+        <button class="share-link" type="button" id="share-copy" data-url="{{ shareUrl }}" aria-label="Copy link to clipboard">Copy link</button>
+      </div>
+      <a class="raw-link" href="/{{ page.fileSlug }}.md" title="Download raw markdown source">Raw .md</a>
+    </footer>
+
+    <div class="post-quiz-cta">
+      <p class="post-quiz-cta-text">If this argument holds, the quiz will test whether the rest of your politics follows the same logic.</p>
+      <a href="/quiz/" class="post-quiz-cta-link">Take the consistency quiz &rarr;</a>
+    </div>
+
+    {% set domainKey = domain | replace("-", "_") %}
+    {% set sameDomain = collections["domain_" + domainKey] %}
+    {% set relatedList = collections.post | relatedPosts(page.url, sameDomain, related, 3) %}
+    {% if relatedList | length > 0 %}
+    <aside class="post-related" aria-labelledby="related-label">
+      <span class="section-label" id="related-label">Continue Reading</span>
+      <ul class="post-list" aria-label="Related posts">
+        {% for rel in relatedList %}
+        <li class="post-list-item">
+          <div>
+            <div class="post-list-item-title">
+              <a href="{{ rel.url }}">{{ rel.data.title }}</a>
+            </div>
+            {% if rel.data.excerpt %}
+            <p class="post-list-item-excerpt">{{ rel.data.excerpt }}</p>
+            {% endif %}
+          </div>
+          <div class="post-list-item-meta">
+            <span>{{ rel.date | dateReadable }}</span>
+            <span>{{ rel.data.domain | domainLabel }}</span>
+          </div>
+        </li>
+        {% endfor %}
+      </ul>
+    </aside>
+    {% endif %}
+
+  </div>
+</article>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "@id": "{{ site.url }}{{ page.url }}#article",
+      "headline": {{ title | dump | safe }},
+      "description": {{ (description or excerpt or "") | dump | safe }},
+      "keywords": {{ domain | domainLabel | dump | safe }},
+      "wordCount": {{ content | wordCount }},
+      "datePublished": "{{ date | dateISO }}",
+      "dateModified": "{% if modified %}{{ modified | dateISO }}{% else %}{{ date | dateISO }}{% endif %}",
+      "inLanguage": "en-US",
+      "isAccessibleForFree": true,
+      "articleSection": {{ domain | domainLabel | dump | safe }},
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "{{ site.url }}{{ page.url }}"
+      },
+      "image": {
+        "@type": "ImageObject",
+        "url": "{{ site.url }}/og/{{ page.fileSlug }}.png",
+        "width": 1200,
+        "height": 630
+      },
+      "speakableSpecification": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": [".post-title", ".post-body p:first-of-type"]
+      },
+      "author": { "@id": "{{ site.url }}/#author" },
+      "publisher": { "@id": "{{ site.url }}/#author" },
+      "isPartOf": {
+        "@type": "WebSite",
+        "@id": "{{ site.url }}/#website",
+        "name": "{{ site.name }}",
+        "url": "{{ site.url }}"
+      },
+      "url": "{{ site.url }}{{ page.url }}"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": {{ site.name | dump | safe }},
+          "item": "{{ site.url }}/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": {{ domain | domainLabel | dump | safe }},
+          "item": "{{ site.url }}/{{ domain }}/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": {{ title | dump | safe }},
+          "item": "{{ site.url }}{{ page.url }}"
+        }
+      ]
+    }
+  ]
+}
+</script>

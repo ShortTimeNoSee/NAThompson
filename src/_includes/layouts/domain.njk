@@ -1,0 +1,85 @@
+---
+layout: layouts/base.njk
+---
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "CollectionPage",
+      "@id": "{{ site.url }}/{{ domainData.key }}/",
+      "name": {{ domainData.title | dump | safe }},
+      "description": {{ domainData.description | dump | safe }},
+      "url": "{{ site.url }}/{{ domainData.key }}/",
+      "inLanguage": "en-US",
+      "isPartOf": { "@id": "{{ site.url }}/#website" },
+      "author": { "@id": "{{ site.url }}/#author" }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": {{ site.name | dump | safe }},
+          "item": "{{ site.url }}/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": {{ domainData.title | dump | safe }},
+          "item": "{{ site.url }}/{{ domainData.key }}/"
+        }
+      ]
+    }
+  ]
+}
+</script>
+
+<div class="domain-banner">
+  <div class="site-container">
+    <a class="breadcrumb-banner" href="/#writing">&larr; All Writing</a>
+    <h1 class="domain-banner-title">{{ domainData.title }}</h1>
+  </div>
+</div>
+
+<div class="site-container">
+
+  <p class="domain-desc">{{ domainData.description }}</p>
+
+  <section class="domain-posts">
+    {% set domainKey = domainData.key | replace("-", "_") %}
+    {% set posts = collections["domain_" + domainKey] %}
+
+    {% if posts | length > 0 %}
+    <ul class="post-list" aria-label="Posts in {{ domainData.title }}">
+      {% for post in posts %}
+      <li class="post-list-item">
+        <div>
+          <div class="post-list-item-title">
+            <a href="{{ post.url }}">{{ post.data.title }}</a>
+          </div>
+          {% if post.data.excerpt %}
+          <p class="post-list-item-excerpt">{{ post.data.excerpt }}</p>
+          {% endif %}
+        </div>
+        <div class="post-list-item-meta">
+          <span>{{ post.date | dateReadable }}</span>
+          <span>{{ post.templateContent | readingTime }}</span>
+        </div>
+      </li>
+      {% endfor %}
+    </ul>
+    {% else %}
+    <p class="meta-label meta-label--empty">
+      No pieces published yet.
+    </p>
+    {% endif %}
+  </section>
+
+  <div class="post-quiz-cta">
+    <p class="post-quiz-cta-text">These pieces share a framework. The quiz tests whether your broader political views follow the same logic.</p>
+    <a href="/quiz/" class="post-quiz-cta-link">Take the consistency quiz &rarr;</a>
+  </div>
+
+</div>

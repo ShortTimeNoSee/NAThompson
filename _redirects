@@ -1,0 +1,5 @@
+# Cloudflare Pages redirects
+# Format: /old-path /new-path [status]
+
+# Redirect bare domain to www (or vice versa — handled in Cloudflare dashboard)
+# /old-slug /new-slug 301

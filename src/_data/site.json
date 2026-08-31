@@ -1,0 +1,34 @@
+{
+  "name": "NA Thompson",
+  "legalName": "Nicholas A. Thompson",
+  "url": "https://nathompson.com",
+  "tagline": "Diagnosing the mechanisms of state capture, monopoly, and cognitive control.",
+  "description": "Structural analysis of state monopolies, intellectual property regimes, cognitive capture, and the failures of centralized control. Written from Irvine, CA.",
+  "author": {
+    "name": "NA Thompson",
+    "legalName": "Nicholas A. Thompson",
+    "location": "Irvine, CA",
+    "affiliation": "University of California, Irvine, Cognitive Sciences",
+    "birthdate": "2006-02-01"
+  },
+  "license": {
+    "spdx": "LicenseRef-LSA-1.0",
+    "name": "Liberty-ShareAlike 1.0",
+    "shortName": "LSA-1.0",
+    "url": "https://github.com/ShortTimeNoSee/liberty-sharealike/blob/v1.0/LICENSE"
+  },
+  "feeds": {
+    "rss": "/feeds/rss.xml",
+    "atom": "/feeds/atom.xml"
+  },
+  "social": {
+    "twitter": "@nickispolitical"
+  },
+  "nav": [
+    { "label": "Writing", "url": "/#writing" },
+    { "label": "Quiz", "url": "/quiz/" },
+    { "label": "Positions", "url": "/positions/" },
+    { "label": "Method", "url": "/method/" },
+    { "label": "About", "url": "/about/" }
+  ]
+}

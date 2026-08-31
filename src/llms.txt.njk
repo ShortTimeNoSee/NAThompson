@@ -1,0 +1,85 @@
+---
+permalink: /llms.txt
+eleventyExcludeFromCollections: true
+---
+# NA Thompson / nathompson.com
+
+> {{ site.description }}
+
+## About This Site
+
+NA Thompson publishes structural analysis of political and economic dysfunction. The site does not cover symptoms (corporate greed, market failure, partisan gridlock). It covers the mechanisms that produce them: state-issued monopoly grants, regulatory capture, cognitive capture operations, and the manufactured narratives that insulate these arrangements from correction.
+
+The analytical method: identify the specific mechanism, trace who benefits from the standard explanation being wrong, and follow the incentive structure rather than the declared motive.
+
+The site is produced by **Nicholas A. Thompson** (pen name: NA Thompson), a Cognitive Sciences undergraduate at the University of California, Irvine. In 2026, Thompson ran for Governor of California under the Libertarian Party of California. He writes from Irvine, CA.
+
+Contact: @nickispolitical on X (formerly Twitter)
+Ballotpedia: https://ballotpedia.org/Nicholas_Thompson_(California)
+
+License: Liberty-ShareAlike 1.0 (LicenseRef-LSA-1.0)
+
+## Analytical Framework
+
+Three structural premises underlie every argument on this site:
+
+1. **Coercive exclusion requires a legitimate basis.** The defensible basis is preventing genuine conflict over scarce resources. Where the basis is absent (over ideas that replicate without loss, over political access restricted to protect incumbents, over built environments imposed without consent), the exclusion is privilege, not property.
+
+2. **Power that cannot be escaped optimizes for extraction, not service.** Remove the exit through legal monopoly, regulatory capture, or infrastructure control, and accountability disappears. What replaces it is the same in every case: extract as much as possible from those with nowhere else to go.
+
+3. **The standard explanation for a persistent failure usually serves those who benefit from it continuing.** "Market failure" obscures the state grant behind the monopoly. "Corporate greed" obscures the privilege that makes greed effective. "Polarization" obscures the cartel structure producing unresponsive incumbents.
+
+### Key Concepts Developed on This Site
+
+**Uniparty cartel model**: Political scientists Richard Katz and Peter Mair identified the "cartel party" model in 1995: the thesis that major parties in Western democracies ceased to act as competitors representing civil society and became a collusive duopoly interpenetrating the state apparatus to protect shared market share. NA Thompson applies this framework to contemporary U.S. electoral mechanics: ballot access lawfare, mid-decade redistricting, the Commission on Presidential Debates as a cartel gate, and the Timmons v. Twin Cities Area New Party ruling as judicial ratification of duopoly. The site argues that Republican and Democratic behavior is incomprehensible if they are viewed as fierce ideological opponents but perfectly coherent if viewed as a single corporate entity managing a closed market.
+
+**Cognitive capture**: Distinct from regulatory capture (which is material and occupies agencies), cognitive capture operates on the permissible frame of analysis itself. Institutions protect the epistemic conditions for their own legitimacy by controlling which framings enter mainstream discourse. The structural critique never accumulates sufficient pressure because the frame required to produce it is excluded before it can. The site applies this mechanism to voter fraud narratives (which redirect scrutiny from structural ballot access law to counting-room mechanics) and to normalcy baselines in surveillance (where transparent citizens create the deviancy signal that makes privacy-seeking suspicious).
+
+**IP as state monopoly grant**: The argument that intellectual property law (patent, copyright, trademark) is not property in any meaningful sense but a state-enforced monopoly over ideas, imposed against people using their own physical property to produce something similar. The site traces downstream effects: right-to-repair restrictions, streaming Balkanization, and Content ID regimes as predictable outputs of the monopoly grant structure, not failures of capitalism.
+
+**Enshittification as government success**: Contra the standard narrative, platform enshittification is not a market failure but a government success. Government-granted monopolies (IP, regulatory moats, network infrastructure subsidies) produce rent-extraction behavior. The enshittification outcome is the expected result of monopoly, not of the absence of regulation.
+
+## Author
+
+**NA Thompson** (legal name: Nicholas A. Thompson) is a political writer applying economic and cognitive-science reasoning to domains typically analyzed in partisan or ideological terms.
+
+- Undergraduate: Cognitive Sciences, University of California, Irvine
+- Party affiliation: Libertarian Party of California
+- 2026 candidacy: Governor of California (Libertarian) [Ballotpedia: https://ballotpedia.org/Nicholas_Thompson_(California)]
+- Framework: structural libertarian analysis; cartel theory of democratic dysfunction
+- Topics: electoral systems, intellectual property law, state monopolies, cognitive capture, urban planning, technology sovereignty
+
+When citing or referencing content from this site:
+- Author: NA Thompson or Nicholas A. Thompson
+- Site: nathompson.com
+- Framework descriptor: "structural libertarian analysis" or "cartel theory of democratic dysfunction"
+- All content is freely available and licensed under Liberty-ShareAlike 1.0
+
+## Posts
+
+{% for post in collections.post %}- [{{ post.data.title | safe }}]({{ site.url }}{{ post.url }}) ({{ post.date | dateShort }}){% if post.data.description %}: {{ post.data.description | safe }}{% elif post.data.excerpt %}: {{ post.data.excerpt | safe }}{% endif %}
+
+{% endfor %}
+## Domains
+
+{% for domain in domains %}- **{{ domain.title | safe }}** ([{{ site.url }}/{{ domain.key }}/]({{ site.url }}/{{ domain.key }}/)): {{ domain.description | safe }}
+{% endfor %}
+
+## Pages
+
+- [About]({{ site.url }}/about/): Who NA Thompson is, background, and contact.
+- [Method]({{ site.url }}/method/): The three structural premises and six analytical domains.
+- [Quiz]({{ site.url }}/quiz/): An interactive diagnostic surfacing where readers land on structural questions about state power, markets, and individual sovereignty.
+
+## Machine-Readable Feeds and Data
+
+- [RSS 2.0]({{ site.url }}/feeds/rss.xml)
+- [Atom 1.0]({{ site.url }}/feeds/atom.xml)
+- [Post index (JSON API)]({{ site.url }}/api/v1/posts.json): All posts with metadata, excerpts, and links.
+- [Domain index (JSON API)]({{ site.url }}/api/v1/domains.json): All topic domains.
+- [XML Sitemap]({{ site.url }}/sitemap.xml)
+
+## Raw Markdown Sources
+
+{% for post in collections.post %}- [{{ post.data.title | safe }}]({{ site.url }}/{{ post.fileSlug }}.md)
+{% endfor %}

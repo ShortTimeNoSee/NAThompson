@@ -1,0 +1,30 @@
+---
+permalink: /sitemap.xml
+eleventyExcludeFromCollections: true
+---
+<?xml version="1.0" encoding="utf-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+          http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+  <url>
+    <loc>{{ site.url }}/</loc>
+  </url>
+  <url>
+    <loc>{{ site.url }}/about/</loc>
+  </url>
+  <url>
+    <loc>{{ site.url }}/method/</loc>
+  </url>
+  <url>
+    <loc>{{ site.url }}/quiz/</loc>
+  </url>
+  {% for domain in domains %}<url>
+    <loc>{{ site.url }}/{{ domain.key }}/</loc>
+  </url>
+  {% endfor %}{% for post in collections.post %}<url>
+    <loc>{{ site.url }}{{ post.url }}</loc>
+    <lastmod>{{ post.date | dateShort }}</lastmod>
+  </url>
+  {% endfor %}
+</urlset>

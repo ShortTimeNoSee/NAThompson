@@ -1,0 +1,32 @@
+[
+  {
+    "key": "state-monopolies",
+    "title": "State Monopolies",
+    "description": "The companies most blamed for high prices and anti-consumer behavior are often the ones most protected from replacement. That protection requires a specific mechanism: a government grant."
+  },
+  {
+    "key": "intellectual-property",
+    "title": "Intellectual Property",
+    "description": "Patent, copyright, and trademark are called property rights. They function as monopolies over ideas and expression, enforced at state expense, regardless of merit, at everyone else's cost."
+  },
+  {
+    "key": "cognitive-capture",
+    "title": "Cognitive Capture",
+    "description": "The people most invested in explaining why a system is broken are usually the same people most invested in the system staying broken. The explanation that leaves out the mechanism is not accidental."
+  },
+  {
+    "key": "urban-planning",
+    "title": "Urban Planning",
+    "description": "Car dependency, housing scarcity, and neighborhood segregation by income were built by planners acting on explicit theories. They are policy outputs, not market outcomes."
+  },
+  {
+    "key": "technology",
+    "title": "Technology & Sovereignty",
+    "description": "Platform monopolies look like market outcomes. They are maintained by network effects, switching costs, and occasional government grants. Who owns the infrastructure determines who uses it, and on what terms."
+  },
+  {
+    "key": "electoral-systems",
+    "title": "Electoral Systems",
+    "description": "The incumbent two-party cartel has survived every reform movement aimed at it. The survival strategy is to write the rules, specifically the ones that decide who gets on the ballot."
+  }
+]

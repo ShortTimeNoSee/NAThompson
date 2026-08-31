@@ -1,0 +1,85 @@
+---
+layout: layouts/base.njk
+---
+
+<section class="home-lede">
+  <div class="site-container">
+    <div class="home-lede-inner">
+      <p class="home-lede-thesis">The monopoly<br>comes from<br>the state.</p>
+      <div class="home-lede-actions">
+        <a class="home-lede-cta" href="/quiz/">Test your consistency &rarr;</a>
+        <a class="home-lede-method" href="/method/">How this works &rarr;</a>
+      </div>
+    </div>
+    <p class="home-lede-frame">The public blames the market. A state-issued exclusive right creates a structural outcome. That outcome gets misattributed to something else. The misattribution protects the arrangement. The mechanism recurs across housing, gas prices, tech platforms, copyright, and electoral law.</p>
+  </div>
+</section>
+
+<section class="home-evidence" aria-label="Six instances of the same mechanism">
+  <div class="site-container">
+    <p class="home-evidence-label">Six instances of the same mechanism</p>
+    <ul class="home-evidence-list" role="list">
+      <li class="home-evidence-item">
+        <div class="home-evidence-content">
+          <p class="home-evidence-claim">"Gas is expensive in California"</p>
+          <p class="home-evidence-mechanism"><a href="/state-monopolies/">CARB's California-only fuel blend</a> prevents out-of-state supply from covering shortfalls, guaranteeing price spikes from any refinery disruption.</p>
+        </div>
+      </li>
+      <li class="home-evidence-item">
+        <div class="home-evidence-content">
+          <p class="home-evidence-claim">"Housing is unaffordable"</p>
+          <p class="home-evidence-mechanism"><a href="/libertarian-who-hates-cars/">Single-family zoning</a> makes apartments illegal on most residential land, producing scarcity by legal code.</p>
+        </div>
+      </li>
+      <li class="home-evidence-item">
+        <div class="home-evidence-content">
+          <p class="home-evidence-claim">"Tech platforms have permanent monopolies"</p>
+          <p class="home-evidence-mechanism"><a href="/enshittification-government-success/">DMCA and patent law</a> make it a copyright liability to replicate a platform's core features, regardless of engineering capability.</p>
+        </div>
+      </li>
+      <li class="home-evidence-item">
+        <div class="home-evidence-content">
+          <p class="home-evidence-claim">"Copyright protects creators"</p>
+          <p class="home-evidence-mechanism"><a href="/intellectual-property-lie/">Copyright term extensions</a> track catalog values, not creator lifespans, ensuring corporate control over public culture outlasts any individual author.</p>
+        </div>
+      </li>
+      <li class="home-evidence-item">
+        <div class="home-evidence-content">
+          <p class="home-evidence-claim">"The two-party system is what voters want"</p>
+          <p class="home-evidence-mechanism"><a href="/cartography-of-control/">Ballot access thresholds</a> apply only to challengers. The legislators who write them face no equivalent requirement.</p>
+        </div>
+      </li>
+      <li class="home-evidence-item">
+        <div class="home-evidence-content">
+          <p class="home-evidence-claim">"Regulatory agencies protect the public"</p>
+          <p class="home-evidence-mechanism"><a href="/cognitive-capture/">Agencies staffed from and returning to industry</a> produce policy that reflects those relationships, by design.</p>
+        </div>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<section class="home-writing" id="writing">
+  {% for domain in domains %}
+  {% set domainKey = domain.key | replace("-", "_") %}
+  {% set domainPosts = collections["domain_" + domainKey] %}
+  {% if domainPosts | length > 0 %}
+  <div class="home-domain-head site-container">
+    <a href="/{{ domain.key }}/" class="home-domain-head-link">{{ domain.title }}</a>
+  </div>
+  <div class="home-domain-posts site-container">
+    <ul class="home-post-list">
+      {% for post in domainPosts | limit(4) %}
+      <li class="home-post-item">
+        <a href="{{ post.url }}" class="home-post-title">{{ post.data.title }}</a>
+        <span class="home-post-date">{{ post.date | dateReadable }}</span>
+      </li>
+      {% endfor %}
+    </ul>
+    {% if domainPosts | length > 4 %}
+    <a href="/{{ domain.key }}/" class="home-domain-more">All {{ domain.title }} &rarr;</a>
+    {% endif %}
+  </div>
+  {% endif %}
+  {% endfor %}
+</section>

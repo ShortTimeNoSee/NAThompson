@@ -1,0 +1,23 @@
+---
+layout: layouts/base.njk
+title: Diagnostic Quiz
+description: "A Yes/No quiz that surfaces the structural contradictions in your political assumptions. Answer honestly. The tensions are the point."
+permalink: /quiz/
+stylesheets:
+  - /assets/css/quiz.css
+---
+<div class="site-container">
+
+  <header class="about-header">
+    <h1 class="about-title">Diagnostic Quiz</h1>
+    <p class="quiz-intro">Not a candidate match. Not a values sorter. Answer Yes, No, or Skip on each question. When your answers contradict each other, you will see why.</p>
+  </header>
+
+  <div class="quiz-shell">
+    <div id="quiz-stage" class="quiz-stage" aria-live="polite" aria-atomic="false"></div>
+  </div>
+
+</div>
+
+<script src="{{ "/assets/js/quiz-data.js" | asset }}"></script>
+<script src="{{ "/assets/js/quiz.js" | asset }}"></script>

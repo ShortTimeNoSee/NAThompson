@@ -1,0 +1,12 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "nathompson-dev",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "serve:preview"],
+      "port": 8080,
+    "autoPort": true
+    }
+  ]
+}
