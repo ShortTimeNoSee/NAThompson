@@ -11,7 +11,7 @@ This is a [/now page](https://nownownow.com/about), in the tradition started by 
 
 ## Studying
 
-Starting my first semester at UC Irvine this fall, Cognitive Sciences. I transferred from Butte College, where I spent three years finishing three degrees. The gap between community college and UC is real; I'd underestimated it. Planning to stay for a master's in HCI if I can get in.
+Starting my first semester at UC Irvine this fall, Cognitive Sciences. I transferred from Butte College, where I spent three years finishing three degrees. Planning to stay for a master's in HCI if I can get in.
 
 ## Writing
 
