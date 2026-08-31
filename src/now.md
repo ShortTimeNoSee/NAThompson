@@ -2,28 +2,30 @@
 layout: layouts/about.njk
 title: Now
 lead: "What I'm focused on, as of August 2026."
-description: "What NA Thompson is doing right now: studying, writing, and thinking about what comes next."
+description: "What NA Thompson is doing right now: starting at UCI, writing, and working out what comes next."
 permalink: /now/
 suppressBaseSchema: true
 ---
 
-This is a [/now page](https://nownownow.com/about), in the tradition started by Derek Sivers. It reflects where things actually stand, not where I want them to seem like they stand.
+This is a [/now page](https://nownownow.com/about), in the tradition started by Derek Sivers. It reflects where things actually stand.
 
 ## Studying
 
-Cognitive Sciences, UC Irvine. I transferred from community college this fall. Planning to stay for a master's. The questions I'm most interested in sit at the intersection of cognitive science and political economy: how motivated reasoning operates at scale, how framings crowd out competing analyses, why correct diagnoses don't automatically produce change. Being at UCI to study them formally is the right move.
+Starting my first semester at UC Irvine this fall, Cognitive Sciences. I transferred from Butte College, where I spent three years finishing three degrees. The gap between community college and UC is real; I'd underestimated it. Planning to stay for a master's in HCI if I can get in.
 
 ## Writing
 
-The essays on this site. Ongoing and slower than I'd like. The goal is to keep closing the gap between the analytical framework and the body of work that demonstrates it. Each piece should be more careful than the last.
+The essays on this site. Irregular and slower than I'd like. I'm not going to pretend there's a backlog waiting to drop. What's published is what I've finished thinking through clearly enough to put out. The goal is to close the gap between the analytical framework and the body of work that demonstrates it, one piece at a time.
 
 ## Thinking About
 
-What the work looks like at larger scale. The writing is one mode. Running for things is another. Building tools and resources is a third. All three have been part of this project at different points. What the right balance looks like going forward is something I'm working out.
+What the work looks like beyond individual essays. The writing is one mode. Running for things is another. Building tools and resources for other activists is a third. I ran for governor the same semester I transferred, which was probably too much at once, and I learned things from both that I hadn't expected.
+
+The right balance going forward is something I'm working out. More on that as it becomes clear.
 
 ## Otherwise
 
-Living a reasonably normal life and trying to keep it that way.
+Adjusting to Irvine. It's not Chico, which has both advantages and disadvantages depending on what you're trying to do.
 
 ---
 

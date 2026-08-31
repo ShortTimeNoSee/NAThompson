@@ -2,51 +2,34 @@
 layout: layouts/about.njk
 title: About
 ageLead: true
-lead: "UC Irvine. Writing about what keeps broken systems in place."
+lead: "UCI. CogSci. Ran for governor at twenty."
 description: "NA Thompson is a Cognitive Sciences student at UC Irvine who writes about the mechanisms that keep broken political and economic arrangements in place."
 permalink: /about/
 suppressBaseSchema: true
 ---
 
-I study how minds work at UC Irvine and write about why broken political and economic structures stay broken. The connection is closer than it sounds.
+In 2026, I ran for Governor of California on the Libertarian Party ticket. I was twenty years old. The official description of that campaign is "a losing third-party bid." The more accurate description is a communication experiment that cost less than most people's car payments and produced a direct test of whether structural arguments about state-granted monopolies can reach outside the libertarian base.
 
-I grew up in Chico, the kind of town where you can watch decisions made in Sacramento land on actual people. {% set _age = site.author.birthdate | ageWord %}{% if _age %}I'm {{ _age }}, studying{% else %}I study{% endif %} Cognitive Sciences at UC Irvine. I transferred from community college this fall and ran for governor the year before that.
+I grew up in Chico, the kind of town where you can watch decisions made in Sacramento land on actual people. Graduated Butte College with three degrees, then transferred to UC Irvine for Cognitive Sciences this fall.
 
 ## The Work
 
-The writing on this site is about mechanisms. California gas costs six dollars a gallon. People blame oil companies, or OPEC, or general corporate greed. The actual answer involves a California Air Resources Board regulation mandating a fuel blend specific to this state, which means when a California refinery goes offline, supply from other states cannot cover the gap. That is a regulatory output, not a market failure. The mechanism is the story. The story the politicians tell about the mechanism is the part that needs contesting.
+The essays on this site are about a specific and repeating move: an arrangement produces visible harm, attributes that harm to the wrong cause, and thereby protects itself from correction.
 
-I have found the same structure in every domain I have spent serious time in. A government-issued exclusive right creates a structural outcome, that outcome gets misattributed to something else, and the misattribution protects the arrangement from being corrected. Patent law. Zoning codes. Copyright terms. Ballot access thresholds. Regulatory agencies. It is the same move applied to different domains.
+California gas prices are high because a CARB regulation mandates a fuel blend specific to this state. When a California refinery goes offline, supply from other states cannot cover the gap. People say oil companies. The oil companies cannot fix this.
 
-I write about it because the misattribution is doing real harm to real people, and because correctly identifying the mechanism is the prerequisite for changing anything. The [method page](/method/) explains the analytical framework. The [positions page](/positions/) states the conclusions.
+Housing costs are high because zoning makes multi-family construction illegal on most residential land in California cities. The shortage is a legal product. People say developers. The developers are building as much as the law allows.
 
-I am not interested in fixing this by electing better people. The incentives of the position are more powerful than the intentions of the person who fills it.
+Copyright term extensions were passed in years when major studio catalog rights were about to expire. The claimed beneficiary is the original creator. The original creator is usually dead.
 
-The cognitive science is part of the same project. If the mechanisms are this identifiable, the question of why they persist is a cognitive question as much as a political one. The most durable protection any arrangement has is a ubiquitous alternative explanation that crowds out the structural one. Motivated reasoning. Framing effects. Consensus forming around explanations that serve narrow interests at broad cost. These are the maintenance mechanisms. Understanding them is inseparable from understanding the structural ones. That is what I'm at UCI to study, and that is what the [cognitive capture section](/cognitive-capture/) is about.
+Same move, different domain. The [method page](/method/) lays out the framework. The [positions page](/positions/) states the conclusions.
 
-## Now
+I am not interested in fixing this by electing better people. The incentives of the office are more durable than the intentions of whoever fills it.
 
-<time class="about-now-updated" datetime="2026-08-30">Updated August 2026 · <a href="/now/">full /now page</a></time>
+## Who I Am
 
-<ul class="about-now-list" role="list">
-  <li class="about-now-item">
-    <span class="about-now-label">Studying</span>
-    <span>Cognitive Sciences, UC Irvine. Planning to stay for a master's.</span>
-  </li>
-  <li class="about-now-item">
-    <span class="about-now-label">Writing</span>
-    <span>The essays on this site. Ongoing.</span>
-  </li>
-  <li class="about-now-item">
-    <span class="about-now-label">Thinking</span>
-    <span>What the work looks like at larger scale. More on this as it becomes clear.</span>
-  </li>
-  <li class="about-now-item">
-    <span class="about-now-label">Otherwise</span>
-    <span>Living a reasonably normal life and trying to keep it that way.</span>
-  </li>
-</ul>
+I'm twenty. I transferred from community college. I study things I'm genuinely confused by and write about the parts I think I've worked out. I make mistakes and try to name them when I find them. I am not a robot, a brand, or a polished thought leader. I ran for governor, got a small number of votes, and found the experience clarifying rather than discouraging.
 
 ## Contact
 
-[@nickispolitical](https://x.com/nickispolitical) on X. On GitHub as [ShortTimeNoSee](https://github.com/ShortTimeNoSee).
+[@nickispolitical](https://x.com/nickispolitical) on X. GitHub: [ShortTimeNoSee](https://github.com/ShortTimeNoSee).
