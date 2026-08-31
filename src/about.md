@@ -10,7 +10,7 @@ suppressBaseSchema: true
 
 In 2026, I ran for Governor of California on the Libertarian Party ticket. I was twenty years old. The official description of that campaign is "a losing third-party bid." The more accurate description is a communication experiment that cost less than most people's car payments and produced a direct test of whether structural arguments about state-granted monopolies can reach outside the libertarian base.
 
-I grew up in Chico, the kind of town where you can watch decisions made in Sacramento land on actual people. Graduated Butte College with three degrees, then transferred to UC Irvine for Cognitive Sciences this fall.
+I grew up in Chico, the kind of town where you can watch decisions made in Sacramento land on actual people. Spent two years at Butte College, finished three degrees, then transferred to UC Irvine for Cognitive Sciences this fall.
 
 ## The Work
 
